@@ -1,0 +1,28 @@
+{
+  "name": "@vntk/conlleval",
+  "version": "1.0.0",
+  "description": "CoNLL format evaluator for Node",
+  "main": "conlleval.js",
+  "scripts": {
+    "test": "node test2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vntk/vntk-conlleval.git"
+  },
+  "keywords": [
+    "vntk",
+    "conll",
+    "evaluation"
+  ],
+  "author": "vunb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vntk/vntk-conlleval/issues"
+  },
+  "homepage": "https://github.com/vntk/vntk-conlleval#readme",
+  "dependencies": {
+    "defaultdict2": "github:vunb/defaultdict2#master",
+    "lodash": "^4.17.4"
+  }
+}
