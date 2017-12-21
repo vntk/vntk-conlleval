@@ -21,16 +21,18 @@ const evaluate = exports.evaluate = function (tokens, delimiter, boundary) {
     let boundary_symbol = '-X-';
 
     for (let line of tokens) {
-        line = line.replace(/[\r\n]$/);
-
-        let is_sent_boundary = boundary.test(line);
-        let features = line.split(delimiter);
-
-        if (is_sent_boundary) {
-            features = [boundary_symbol, 'O', 'O'];
+        let features = line;
+        if (typeof line === 'string') {
+            line = line.replace(/[\r\n]$/);
+            features = line.split(delimiter);
+            
+            let is_sent_boundary = boundary.test(line);
+    
+            if (is_sent_boundary) {
+                features = [boundary_symbol, 'O', 'O'];
+            }
         }
 
-        console.log('features:', features)
         let g = counts.parse_tag(features.pop());
         let c = counts.parse_tag(features.pop());
         let guessed = g[0];
