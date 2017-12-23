@@ -213,7 +213,7 @@ const calculate_metrics = exports.calculate_metrics = function (correct, guessed
     return new Metrics(tp, fp, fn, p, r, f);
 }
 
-const uniq = exports.uniq = function (...a) {
-    let merge = _.assign({}, ...a);
+const uniq = exports.uniq = function () {
+    let merge = _.assign({}, arguments);
     return _.keys(merge);
 }
