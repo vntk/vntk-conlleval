@@ -147,10 +147,9 @@ const measure_performance = exports.measure_performance = function (fn, delimite
 const get_metrics = exports.get_metrics = function (counts) {
     let c = counts;
     let result = {};
-    let {
-        overall,
-        by_type
-    } = metrics(counts);
+    let mtr = metrics(counts);
+    let overall = mtr.overall;
+    let by_type = mtr.by_type;
 
     // console.log('get_metrics: ', overall, by_type);
 
