@@ -22,7 +22,7 @@ class EvalCounts {
 
     parse_tag(tag) {
         let match = REGEX_IOB_TAG.exec(tag);
-        return match ? [match[1], match[2]] : [null, null];
+        return match ? [match[1], match[2]] : [tag, ''];
     }
 }
 

@@ -138,7 +138,7 @@ const startOfChunk = exports.startOfChunk = function (prev_tag, tag, prev_type, 
 const measure_performance = exports.measure_performance = function (fn, delimiter, boundary) {
     let data = fs.readFileSync(fn, 'utf8');
     let sents = data.split('\n');
-    let counts = evaluate(sents, ' ');
+    let counts = evaluate(sents, delimiter);
     let metrics = get_metrics(counts);
     // console.log(metrics);
     return metrics;
@@ -152,7 +152,7 @@ const get_metrics = exports.get_metrics = function (counts) {
         by_type
     } = metrics(counts);
 
-    console.log('get_metrics: ', overall, by_type);
+    // console.log('get_metrics: ', overall, by_type);
 
     result.overall_info = {
         'number_of_tokens': c.token_counter,
@@ -167,15 +167,14 @@ const get_metrics = exports.get_metrics = function (counts) {
     }
 
     result.per_class = Object.create(null);
-    for (let clazz in by_type) {
-        let m = by_type[clazz];
-        result.per_class[clazz] = {
-            'precision' : (100.*m.prec),
-            'recall' : (100.*m.rec),
-            'f_measure' : (100.*m.fscore),
-            'number_of_guessed_tokens' : c.t_found_guessed[clazz]
-        }
-    }
+    _.forOwn(by_type, (m, clazz) => {
+            result.per_class[clazz] = {
+                'precision' : (100.*m.prec),
+                'recall' : (100.*m.rec),
+                'f_measure' : (100.*m.fscore),
+                'number_of_guessed_tokens' : c.t_found_guessed[clazz]
+            }
+    });
 
     return result;
 }
