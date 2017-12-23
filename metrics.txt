@@ -1,0 +1,7 @@
+vunb@VUNB-PC:/mnt/d/node/github/vntk/conlleval$ ./conlleval.pl -d "\t" < diff.txt
+processed 66097 tokens with 2996 phrases; found: 2959 phrases; correct: 2709.
+accuracy:  99.50%; precision:  91.55%; recall:  90.42%; FB1:  90.98
+              LOC: precision:  89.03%; recall:  91.23%; FB1:  90.11  1413
+              MISC: precision: 100.00%; recall: 100.00%; FB1: 100.00  49
+              ORG: precision:  91.63%; recall:  75.91%; FB1:  83.03  227
+              PER: precision:  94.02%; recall:  92.27%; FB1:  93.14  1270

@@ -4,7 +4,7 @@
   "description": "CoNLL format evaluator for Node",
   "main": "conlleval.js",
   "scripts": {
-    "test": "node test2.js"
+    "test": "tape test.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,9 @@
   "dependencies": {
     "defaultdict2": "github:vunb/defaultdict2#master",
     "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0"
   }
 }
