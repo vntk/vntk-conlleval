@@ -1,3 +1,4 @@
+'use strict';
 const conlleval = require('./conlleval');
 
 let metrics = conlleval.measure_performance('diff.txt');
