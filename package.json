@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/vntk/vntk-conlleval#readme",
   "dependencies": {
-    "defaultdict2": "github:vunb/defaultdict2#master",
+    "defaultdict2": "github:vunb/defaultdict2#dev",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
